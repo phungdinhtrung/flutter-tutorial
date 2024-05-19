@@ -1,53 +1,25 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
+import 'quote_card.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({super.key});
 
   @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  List<Quote> quotes = [
+    Quote(author: 'Phung Trung', text: 'Be yourself; everyone else is already taken'),
+    Quote(text: 'I have nothing to declare except my genius', author: 'Hoang Anh'),
+    Quote(text: 'The truth is rarely pure and never simple', author: 'Bao Chau')
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return const Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Center(
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/dog.jpg'),
-                  radius: 40.0,
-                ),
-              ),
-              Divider(
-                height: 60,
-                color: Colors.indigoAccent,
-              ),
-              Text('NAME'),
-              SizedBox(height: 10),
-              Text('Chun-Li',
-                  style: TextStyle(
-                    color: Colors.teal,
-                    letterSpacing: 2.0,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 30),
-              Text('CURERNT NINJA LEVEL'),
-              SizedBox(height: 10),
-              Text('8',
-                  style: TextStyle(
-                    color: Colors.teal,
-                    letterSpacing: 2.0,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 30),
-              Row(children: <Widget>[
-                Icon(Icons.email, color: Colors.blueGrey),
-                SizedBox(width: 10),
-                Text(
-                  'phungdinhtrung@gmail.com',
-                  style: TextStyle(color: Colors.blueGrey),
-                )
-              ])
-            ]));
+    return Column(
+      children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+    );
   }
 }

@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Ninja ID Card',
+            'Show list',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
