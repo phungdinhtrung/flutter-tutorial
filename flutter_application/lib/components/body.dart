@@ -11,15 +11,26 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   List<Quote> quotes = [
-    Quote(author: 'Phung Trung', text: 'Be yourself; everyone else is already taken'),
-    Quote(text: 'I have nothing to declare except my genius', author: 'Hoang Anh'),
-    Quote(text: 'The truth is rarely pure and never simple', author: 'Bao Chau')
+    Quote(
+        author: 'Phung Trung',
+        text: 'Be yourself; everyone else is already taken'),
+    Quote(
+        text: 'I have nothing to declare except my genius',
+        author: 'Hoang Anh'),
+    Quote(
+        text: 'The truth is rarely pure and never simple',
+        author: 'Bao Chau'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+      children: quotes
+          .map((quote) => QuoteCard(
+                quote: quote,
+                fnDelete: () {},
+              ))
+          .toList(),
     );
   }
 }
