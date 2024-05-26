@@ -1,0 +1,43 @@
+name: app_level1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+ 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  assets:
+    - images/diamond.png
+    - images/avanta-trung.jpg
+
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/pacifico/Pacifico-Regular.ttf
+    - family: OpenSans
+      fonts:
+        - asset: fonts/open-sans/OpenSans-Regular.ttf
+        - asset: fonts/open-sans/OpenSans-Bold.ttf
+        - asset: fonts/open-sans/OpenSans-Italic.ttf
+
+    - family: Roboto
+      fonts:
+        - asset: fonts/roboto/Roboto-Regular.ttf
+        - asset: fonts/roboto/Roboto-Medium.ttf
+        - asset: fonts/roboto/Roboto-Italic.ttf
+        - asset: fonts/roboto/Roboto-Bold.ttf

@@ -10,17 +10,18 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getData() async {
+  getData() async {
     Response response =
         await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
     Map data = jsonDecode(response.body);
-    print(data['title']);
+    return data;
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    Map data = getData();
+    Navigator.pushReplacementNamed(context, '/home', arguments: data);
   }
 
   @override
