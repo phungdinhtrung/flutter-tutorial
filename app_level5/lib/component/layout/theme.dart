@@ -8,7 +8,7 @@ ThemeData appTheme = ThemeData(
     foregroundColor: Colors.white,
   ),
   colorScheme: const ColorScheme.light(
-    primary: Color.fromARGB(255, 4, 65, 6),
+    primary: Colors.white,
     brightness: Brightness.dark,
   ),
   textTheme: const TextTheme(

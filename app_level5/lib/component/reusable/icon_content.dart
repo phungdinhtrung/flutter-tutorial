@@ -18,6 +18,7 @@ class IconContent extends StatelessWidget {
         Icon(
           icon,
           size: iconSize,
+          color: Theme.of(context).colorScheme.primary,
         ),
         SizedBox(
           height: iconPadding,
