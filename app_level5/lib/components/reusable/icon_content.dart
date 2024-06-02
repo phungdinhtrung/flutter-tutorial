@@ -23,6 +23,7 @@ class IconContent extends StatelessWidget {
           height: iconPadding,
         ),
         Text(
+          textAlign: TextAlign.center,
           label,
           style: TextStyle(fontSize: fontSize),
         ),

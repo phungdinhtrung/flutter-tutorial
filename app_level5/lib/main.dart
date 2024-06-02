@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'config/theme.dart';
-import 'config/app_bar.dart';
-import 'components/home_page.dart';
+import 'components/layout/theme.dart';
+import 'components/layout/app_bar.dart';
+import 'page/home.dart';
 
 void main() {
   runApp(const Quizzler());
@@ -14,9 +14,9 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeConfig().getTheme(),
+        theme: appTheme,
         home: Scaffold(
-          appBar: AppBarConfig().getAppBar(),
+          appBar: appBar,
           body: const SafeArea(child: HomePage()),
         ));
   }
