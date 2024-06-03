@@ -4,6 +4,13 @@ import '../component/reusable/card.dart';
 import '../component/reusable/icon_content.dart';
 import '../config/constant.dart';
 import '../config/enum.dart';
+import '../component/reusable/icon.dart';
+import '../component/layout/app_bar.dart';
+
+Scaffold home = Scaffold(
+  appBar: appBar,
+  body: const SafeArea(child: HomePage()),
+);
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,6 +22,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Gender selectedGender = Gender.male;
   int height = 180;
+  int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -116,9 +125,9 @@ class _HomePageState extends State<HomePage> {
                           'WEIGHT',
                           style: TextStyle(fontSize: 18.0),
                         ),
-                        const Text(
-                          '60',
-                          style: TextStyle(
+                        Text(
+                          weight.toString(),
+                          style: const TextStyle(
                             fontSize: 50.0,
                             fontWeight: FontWeight.w900,
                           ),
@@ -126,18 +135,24 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            FloatingActionButton(
-                              onPressed: () {},
-                              backgroundColor: Colors.grey,
-                              child: const Icon(Icons.remove),
+                            RoundIconButton(
+                              icon: Icons.remove,
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                             ),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            FloatingActionButton(
-                              onPressed: () {},
-                              backgroundColor: Colors.grey,
-                              child: const Icon(Icons.add),
+                            RoundIconButton(
+                              icon: Icons.add,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                             ),
                           ],
                         ),
@@ -145,12 +160,48 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   child: ReusableCard(
                     color: activeCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.ruler,
-                      label: 'HEIGHT',
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'AGE',
+                          style: TextStyle(fontSize: 18.0),
+                        ),
+                        Text(
+                          age.toString(),
+                          style: const TextStyle(
+                            fontSize: 50.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: Icons.remove,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: Icons.add,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),

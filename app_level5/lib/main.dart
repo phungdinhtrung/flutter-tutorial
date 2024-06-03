@@ -1,7 +1,6 @@
+import 'package:app_level4/page/home.dart';
 import 'package:flutter/material.dart';
 import 'component/layout/theme.dart';
-import 'component/layout/app_bar.dart';
-import 'page/home.dart';
 
 void main() {
   runApp(const MBICaculator());
@@ -14,10 +13,11 @@ class MBICaculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: appTheme,
-        home: Scaffold(
-          appBar: appBar,
-          body: const SafeArea(child: HomePage()),
-        ));
+      theme: appTheme,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => home,
+      },
+    );
   }
 }
