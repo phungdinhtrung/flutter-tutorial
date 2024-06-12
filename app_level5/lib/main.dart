@@ -1,6 +1,7 @@
-import 'package:app_level4/page/home.dart';
 import 'package:flutter/material.dart';
 import 'component/layout/theme.dart';
+import 'package:app_level4/page/home.dart';
+import 'package:app_level4/page/result.dart';
 
 void main() {
   runApp(const MBICaculator());

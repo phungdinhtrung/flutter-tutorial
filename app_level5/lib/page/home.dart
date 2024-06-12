@@ -6,6 +6,9 @@ import '../config/constant.dart';
 import '../config/enum.dart';
 import '../component/reusable/icon.dart';
 import '../component/layout/app_bar.dart';
+import '../component/reusable/button.dart';
+import '../function/caculate_bmi.dart';
+import 'result.dart';
 
 Scaffold home = Scaffold(
   appBar: appBar,
@@ -208,22 +211,21 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            height: 80.0,
-            width: double.infinity,
-            margin: const EdgeInsets.only(top: 10.0),
-            decoration: const BoxDecoration(
-                color: Colors.pink,
-                borderRadius: BorderRadius.all(Radius.circular(10.0))),
-            child: const Center(
-              child: Text(
-                'Calculate',
-                style: TextStyle(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
+          ButtonOnBottom(
+            titleButton: 'CALCULATE YOUR BMI',
+            onTap: () {
+              CaculateBmi bmi = CaculateBmi(height: height, weight: weight);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    bmiResult: bmi.caculateBMI(),
+                    textResult: bmi.getResult(),
+                    interpretation: bmi.getInterpretation(),
+                  ),
                 ),
-              ),
-            ),
+              );
+            },
           )
         ]);
   }
